@@ -37,7 +37,7 @@ server.get('/', function(req,res) {
   Comment.find(function(err, postedItems) {
     for(i in postedItems) {
       console.log(postedItems[i].comment_text);
-      body += postedItems[i].comment_text;
+      body += postedItems[i].comment_text + '<br>';
     }
     res.writeHead(200, {
       'Content-Length': Buffer.byteLength(body),
